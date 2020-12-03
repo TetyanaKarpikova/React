@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import AdressComponent from './components/usersadress/AdressComponent';
+import { usersAddress } from './database/usersAdress';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+
+    return (
+
+      <div>
+        {
+        usersAddress.map((adress, index) => {
+          let clsx = index % 2 ? 'even' : 'odd';
+          return (
+            <AdressComponent
+              item = {adress}
+              cls = {clsx}
+              key = {adress.id}/>
+          )
+        })
+        }
+      </div>
+    )
+  }
 }
 
 export default App;

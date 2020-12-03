@@ -1,0 +1,10 @@
+div{
+    border: 1px solid gold;    
+}
+
+.even{
+    background-color: aquamarine;
+}
+.odd{
+    background-color: darkcyan;
+}
